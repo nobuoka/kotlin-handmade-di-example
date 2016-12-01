@@ -26,6 +26,8 @@ interface Component : ApplicationModule, DomainModule, PersistenceModule {
             ApplicationModule by ApplicationModule.Providers(requires), ApplicationModule.Requirements,
             DomainModule by DomainModule.Providers(requires), DomainModule.Requirements,
             PersistenceModule by PersistenceModule.Providers(requires), PersistenceModule.Requirements {
+        override val name: String
+            get() = "名前だよ"
         override val parentComponentName: String
             get() = "親コンポーネント (" + fooRepository.name + ")"
     }
